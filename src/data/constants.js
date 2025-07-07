@@ -200,7 +200,7 @@ export const experiences = [
     id: 2,
     img: "https://res.cloudinary.com/drmm9icnp/image/upload/b_rgb:000000/v1751884921/Neighborhood_Connect_lafkmr.png",
     role: "Final Year University Project",
-    company: "Neighbourhood Connect (FYP)",
+    company: "Neighborhood Connect (FYP)",
     date: "Sep 2024 - May 2025",
     desc: "Developed a cross-platform Flutter app (Dart) backed by Firebase to strengthen community ties, implemented secure user registration/login with location auto-detect, neighborhood-specific newsfeed with post creation & interaction, event coordination with calendar support, a classifieds marketplace, real-time one-to-one chat, SOS gesture for emergency alerts via device sensors.",
     skills: [
