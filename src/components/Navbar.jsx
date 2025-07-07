@@ -137,10 +137,10 @@ const MobileMenu = styled.ul`
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
 
     transition: all 0.3s ease-in-out;
-    pointer-events: ${({ isOpen }) => (isOpen ? "auto" : "none")};
-    transform: ${({ isOpen }) => isOpen ? "translateY(0)" : "translateY(-100%)"};
-    opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
-    z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
+    pointer-events: ${({ $isOpen }) => ($isOpen ? "auto" : "none")};
+    transform: ${({ $isOpen }) => $isOpen ? "translateY(0)" : "translateY(-100%)"};
+    opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
+    z-index: ${({ $isOpen }) => ($isOpen ? "1000" : "-1000")};
 `;
 
 const Navbar = () => {
@@ -177,7 +177,7 @@ const Navbar = () => {
                 </NavItems>
 
 
-                <MobileMenu isOpen={isOpen}>
+                <MobileMenu $isOpen={isOpen}>
                     <NavLink onClick={() => setIsOpen(!isOpen)} href="#About">About</NavLink>
                     <NavLink onClick={() => setIsOpen(!isOpen)} href="#Skills">Skills</NavLink>
                     <NavLink onClick={() => setIsOpen(!isOpen)} href="#Experience">Experience</NavLink>

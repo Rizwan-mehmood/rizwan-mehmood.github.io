@@ -83,7 +83,7 @@ const Title = styled.div`
     }
 
     @media (max-width: 640px) {
-        font-size: 40px;
+        font-size: 32px;
         line-height: 48px;
         margin-bottom: 8px;
     }
@@ -92,19 +92,23 @@ const TextLoop = styled.div`
     font-weight: 600;
     font-size: 32px;
     display: flex;
+    align-items: center;
     gap: 12px;
-
+    
     color: ${({ theme }) => theme.text_primary};
-    line-height: 68px;
-
+    
     @media (max-width: 960px) {
         text-align: center;
+        justify-content: center;
     }
-
+        
     @media (max-width: 640px) {
         font-size: 22px;
-        line-height: 48px;
         margin-bottom: 16px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 20px;
     }
 `;
 const Span = styled.div`
@@ -176,8 +180,8 @@ const Img = styled.img`
     border: 2px solid ${({ theme }) => theme.primary};
 
     @media (max-width: 640px) {
-        max-width: 280px;
-        max-height: 280px;
+        max-width: 240px;
+        max-height: 240px;
     }
 `;
 
