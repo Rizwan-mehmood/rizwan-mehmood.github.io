@@ -25,7 +25,7 @@ const Body = styled.div`
     flex-direction: column;
 
 `;
-const Role = styled.div`
+const School = styled.div`
     font-size: 18px;
     font-weight: 600;
     color: ${({ theme }) => theme.text_primary + 99};
@@ -34,7 +34,7 @@ const Role = styled.div`
         font-size: 14px;
     }
 `;
-const Company = styled.div`
+const Degree = styled.div`
     font-size: 14px;
     font-weight: 500;
     color: ${({ theme }) => theme.text_secondary + 99};
@@ -71,38 +71,24 @@ const Span = styled.div`
     max-width: 100%;
 `;
 
-const Skills = styled.div`
-    width: 100%;
-    display: flex;
-    // flex-direction: column;
-    gap: 12px;
-    margin-top: -10px;
-`;
-
-const Skill = styled.div`
-    font-size: 12px;
-    font-weight: 400;
-    color: ${({ theme }) => theme.text_primary + 99};
+const Grade = styled.div`
+    font-size: 14px;
+    font-weight: 500;
+    color: ${({ theme }) => theme.text_secondary + 99};
 
     @media only screen and (max-width: 768px) {
         font-size: 12px;
     }
 `;
 
-const ItemWrapper = styled.div`
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-`;
-
-const ExperienceCard = ({ experience }) => {
+const EducationCard = ({ education }) => {
     return <VerticalTimelineElement icon={
         <img
             width="100%"
             height="100%"
-            alt={experience?.company}
+            alt={education?.company}
             style={{ borderRadius: "50%", objectFit: "cover" }}
-            src={experience?.img}
+            src={education?.img}
         />
     }
 
@@ -122,36 +108,25 @@ const ExperienceCard = ({ experience }) => {
             borderRight: "7px solid rgba(255, 255, 255, 0.3)"
         }}
 
-        date={experience.date}
+        date={education.date}
 
     >
         <Top>
-            <Image src={experience.img} />
+            <Image src={education.img} />
             <Body>
-                <Role>{experience.role}</Role>
-                <Company>{experience.company}</Company>
-                <Date>{experience.date}</Date>
+                <School>{education.school}</School>
+                <Degree>{education.degree}</Degree>
+                <Date>{education.date}</Date>
             </Body>
         </Top>
+        <Grade>
+            <b>Grade : </b>
+            {education.grade}
+        </Grade>
         <Description>
-            {experience?.desc && <Span>{experience.desc}</Span>}
-            {experience?.skills && (
-                <>
-                    <br />
-                    <Skills>
-                        <b>Skills</b>
-                        <ItemWrapper>
-                            {experience?.skills?.map((skill, index) => (
-                                <Skill key={`skill-${index}`}>
-                                    • {skill}
-                                </Skill>
-                            ))}
-                        </ItemWrapper>
-                    </Skills>
-                </>
-            )}
+            {education?.desc && <Span>{education.desc}</Span>}
         </Description>
     </VerticalTimelineElement >
 }
 
-export default ExperienceCard
+export default EducationCard;

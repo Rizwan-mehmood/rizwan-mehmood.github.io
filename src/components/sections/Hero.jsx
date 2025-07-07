@@ -235,7 +235,11 @@ const Hero = () => {
                             <motion.div {...headContentAnimation}>
                                 <SubTitle>{Bio.description}</SubTitle>
                             </motion.div>
-                            <ResumeButton>Check Resume</ResumeButton>
+                            <ResumeButton
+                                href='https://drive.google.com/file/d/1poum5l3qjKwe4lJk-macFMz_lAz9_MEM/view?usp=sharing'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >Check Resume</ResumeButton>
                         </HeroLeftContainer>
                         <HeroRightContainer>
                             <motion.div {...headContentAnimation}>
