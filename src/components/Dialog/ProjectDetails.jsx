@@ -65,7 +65,9 @@ const Desc = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  object-fit: cover;
+  max-height: 500px;
+  object-fit: contain;
+  background: ${({ theme }) => theme.white + 80};
   border-radius: 12px;
   margin-top: 30px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
