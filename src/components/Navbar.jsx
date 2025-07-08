@@ -16,6 +16,8 @@ const Nav = styled.div`
     top: 0;
     z-index: 10;
     color: white;
+
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
 `;
 
 const NavbarContainer = styled.div`
@@ -28,12 +30,18 @@ const NavbarContainer = styled.div`
     font-size: 1rem;
 `;
 const NavLogo = styled(LinkR)`
-    // width: 80%;
-    padding: 0 6px;
-    text-decoration: none;
-    color: inherit;
-    font-weight: 500;
-    font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+  color: inherit;
+`;
+
+const ColorText = styled.div`
+  color: ${({ theme }) => theme.primary};
+  font-size: 32px;
 `;
 
 const NavItems = styled.ul`
@@ -162,7 +170,11 @@ const Navbar = () => {
     return (
         <Nav>
             <NavbarContainer>
-                <NavLogo to="/">RizwanMehmood</NavLogo>
+                <NavLogo to="/">
+                    <ColorText>&lt;</ColorText>Rizwan
+                    <div style={{ color: theme.primary }}>/</div>Mehmood
+                    <ColorText>&gt;</ColorText>
+                </NavLogo>
 
                 <MobileIcon onClick={() => setIsOpen(!isOpen)}>
                     <MenuRounded style={{ color: "inherit" }} />
