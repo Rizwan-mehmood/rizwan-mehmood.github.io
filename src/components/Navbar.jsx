@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { useTheme } from 'styled-components';
 import { Link as LinkR } from "react-router-dom";
 import { Bio } from "../data/constants";
@@ -126,7 +126,7 @@ const MobileMenu = styled.ul`
 
   transition: all 0.6s ease-in-out;
   transform: ${({ isOpen }) =>
-        isOpen ? "translateY(0)" : "translateY(-100%)"};
+    isOpen ? "translateY(0)" : "translateY(-100%)"};
   border-radius: 0 0 20px 20px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
@@ -134,65 +134,65 @@ const MobileMenu = styled.ul`
 `;
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const theme = useTheme();
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth > 768) {
-                setIsOpen(false);
-            }
-        };
+  const [isOpen, setIsOpen] = useState(false);
+  const theme = useTheme();
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsOpen(false);
+      }
+    };
 
-        window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
 
-        // Clean up the listener on unmount
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    // Clean up the listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    return (
-        <Nav>
-            <NavbarContainer>
-                <NavLogo to="/">
-                    <ColorText>&lt;</ColorText>Rizwan
-                    <div style={{ color: theme.primary }}>/</div>Mehmood
-                    <ColorText>&gt;</ColorText>
-                </NavLogo>
+  return (
+    <Nav>
+      <NavbarContainer>
+        <NavLogo to="/">
+          <ColorText>&lt;</ColorText>Rizwan
+          <div style={{ color: theme.primary }}>/</div>Mehmood
+          <ColorText>&gt;</ColorText>
+        </NavLogo>
 
-                <MobileIcon onClick={() => setIsOpen(!isOpen)}>
-                    <MenuRounded style={{ color: "inherit" }} />
-                </MobileIcon>
+        <MobileIcon onClick={() => setIsOpen(!isOpen)}>
+          <MenuRounded style={{ color: "inherit" }} />
+        </MobileIcon>
 
-                <NavItems>
-                    <NavLink href="#About">About</NavLink>
-                    <NavLink href="#Skills">Skills</NavLink>
-                    <NavLink href="#Experience">Experience</NavLink>
-                    <NavLink href="#Projects">Projects</NavLink>
-                    <NavLink href="#Education">Education</NavLink>
-                </NavItems>
+        <NavItems>
+          <NavLink href="#About">About</NavLink>
+          <NavLink href="#Skills">Skills</NavLink>
+          <NavLink href="#Experience">Experience</NavLink>
+          <NavLink href="#Projects">Projects</NavLink>
+          <NavLink href="#Education">Education</NavLink>
+        </NavItems>
 
 
-                <MobileMenu $isOpen={isOpen}>
-                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#About">About</NavLink>
-                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#Skills">Skills</NavLink>
-                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#Experience">Experience</NavLink>
-                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#Projects">Projects</NavLink>
-                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">Education</NavLink>
-                    <GithubButton href={Bio.github} target='_blank' style={{
-                        background: theme.primary,
-                        color: theme.text_primary
-                    }}>
-                        Github Profile
-                    </GithubButton>
-                </MobileMenu>
+        <MobileMenu $isOpen={isOpen}>
+          <NavLink onClick={() => setIsOpen(!isOpen)} href="#About">About</NavLink>
+          <NavLink onClick={() => setIsOpen(!isOpen)} href="#Skills">Skills</NavLink>
+          <NavLink onClick={() => setIsOpen(!isOpen)} href="#Experience">Experience</NavLink>
+          <NavLink onClick={() => setIsOpen(!isOpen)} href="#Projects">Projects</NavLink>
+          <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">Education</NavLink>
+          <GithubButton href={Bio.github} target='_blank' style={{
+            background: theme.primary,
+            color: theme.text_primary
+          }}>
+            Github Profile
+          </GithubButton>
+        </MobileMenu>
 
-                <ButtonContainer>
-                    <GithubButton href={Bio.github} target='_blank'>
-                        Github Profile
-                    </GithubButton>
-                </ButtonContainer>
-            </NavbarContainer>
-        </Nav>
-    )
+        <ButtonContainer>
+          <GithubButton href={Bio.github} target='_blank'>
+            Github Profile
+          </GithubButton>
+        </ButtonContainer>
+      </NavbarContainer>
+    </Nav>
+  )
 }
 
 export default Navbar

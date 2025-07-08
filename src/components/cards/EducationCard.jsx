@@ -71,15 +71,6 @@ const Span = styled.div`
     max-width: 100%;
 `;
 
-const Grade = styled.div`
-    font-size: 14px;
-    font-weight: 500;
-    color: ${({ theme }) => theme.text_secondary + 99};
-
-    @media only screen and (max-width: 768px) {
-        font-size: 12px;
-    }
-`;
 
 const EducationCard = ({ education }) => {
     return <VerticalTimelineElement icon={
