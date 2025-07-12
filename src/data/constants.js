@@ -267,9 +267,27 @@ export const education = [
 
 export const projects = [
   {
+    id: 10,
+    title: "Qinema",
+    date: "Jun 2025 - Jul 2025",
+    description:
+      "Built Qinema, a full-stack MERN web application for browsing movies, viewing showtimes, and purchasing tickets. Users can explore now-showing films, filter by genre or release, watch trailers, save favorites, and complete secure bookings. Features include an interactive movie carousel, detailed film pages, real-time ticket availability, and a responsive UI for seamless browsing on desktop and mobile.",
+    image: "https://res.cloudinary.com/drmm9icnp/image/upload/v1752335634/Screenshot_2025-07-10_230510_axdtcg.png",
+    tags: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "MERN Stack"
+    ],
+    category: "web app",
+    github: "https://github.com/Rizwan-mehmood/Qinema",
+    webapp: "https://qinema.netlify.app"
+  },
+  {
     id: 0,
     title: "ImaginAI",
-    date: "Jun 2025 - Jul 2025",
+    date: "Jun 2025",
     description:
       "Developed ImaginAI, a full-stack MERN web application that allows users to generate AI-powered images using Hugging Face models. Users can create posts with custom prompts, share generated images with the community, and download their creations. Includes a community feed for exploring popular AI-generated images and a seamless, user-friendly interface.",
     image: "https://res.cloudinary.com/drmm9icnp/image/upload/v1751970559/Screenshot_2025-07-08_152809_vsngei.png",
