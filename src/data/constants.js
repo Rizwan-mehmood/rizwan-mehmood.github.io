@@ -282,7 +282,7 @@ export const projects = [
     ],
     category: "web app",
     github: "https://github.com/Rizwan-mehmood/Qinema",
-    webapp: "https://qinema.netlify.app"
+    webapp: "https://qinema.vercel.app"
   },
   {
     id: 0,
